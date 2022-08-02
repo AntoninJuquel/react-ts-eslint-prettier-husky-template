@@ -21,12 +21,15 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:noWatch": "yarn run test -- --watchAll=false",
     "eject": "react-scripts eject",
     "lint": "eslint src/**/*.{js,jsx,ts,tsx,json}",
     "lint:fix": "eslint --fix src/**/*.{js,jsx,ts,tsx,json}",
-    "format": "prettier --write src/**/*.{js,jsx,ts,tsx,css,md,json} --config ./.prettierrc",
-    "predeploy": "yarn run lint && yarn run format && yarn run build",
-    "deploy": "gh-pages -d build"
+    "format": "prettier --check src/**/*.{js,jsx,ts,tsx,css,md,json} --config ./.prettierrc",
+    "format:fix": "prettier --write src/**/*.{js,jsx,ts,tsx,css,md,json} --config ./.prettierrc",
+    "predeploy": "yarn run lint:fix && yarn run format:fix && yarn run build",
+    "deploy": "gh-pages -d build",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -58,6 +61,7 @@
     "eslint-plugin-react": "^7.30.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "gh-pages": "^4.0.0",
+    "husky": "^8.0.0",
     "prettier": "^2.7.1"
   }
 }
