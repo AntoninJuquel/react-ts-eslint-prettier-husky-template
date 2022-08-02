@@ -2,6 +2,24 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+```console
+yarn create react-app ts-eslint-prettier-boilerplate --template typescript
+cd boilerplate-react-typescript
+yarn add -D eslint
+npx eslint --init
+▸ To check syntax and find problems
+▸ JavaScript modules (import/export)
+▸ React
+▸ Yes
+✔ Browser
+▸ JSON
+yarn add -D eslint-plugin-react@latest @typescript-eslint/eslint-plugin@latest @typescript-eslint/parser@latest
+yarn add -D eslint-plugin-import @typescript-eslint/parser eslint-import-resolver-typescript
+yarn add -D prettier eslint-config-prettier eslint-plugin-prettier eslint-plugin-react-hooks
+yarn add styled-components
+yarn add -D @types/styled-components gh-pages
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
