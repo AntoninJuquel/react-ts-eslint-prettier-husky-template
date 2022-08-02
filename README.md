@@ -3,8 +3,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ```console
-yarn create react-app ts-eslint-prettier-boilerplate --template typescript
-cd boilerplate-react-typescript
+yarn create react-app react-ts-eslint-prettier-husky-template --template typescript
+cd react-ts-eslint-prettier-husky-template
 yarn add -D eslint
 npx eslint --init
 ▸ To check syntax and find problems
