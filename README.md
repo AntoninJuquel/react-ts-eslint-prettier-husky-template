@@ -18,6 +18,7 @@ yarn add -D eslint-plugin-import @typescript-eslint/parser eslint-import-resolve
 yarn add -D prettier eslint-config-prettier eslint-plugin-prettier eslint-plugin-react-hooks
 yarn add styled-components
 yarn add -D @types/styled-components gh-pages
+npx husky-init
 ```
 
 ## Available Scripts
@@ -61,7 +62,7 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 Lint & Fix the code if possible with eslint rules in `.eslint.json`
 
-### `yarn format`
+### `yarn format` & `yarn format:fix`
 
 Format the code with Prettier rules in `.prettierrc`
 
