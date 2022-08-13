@@ -8,7 +8,8 @@
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
-    "prettier"
+    "prettier",
+    "plugin:storybook/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -18,7 +19,7 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier"],
+  "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier", "storybook"],
   "rules": {
     "react/react-in-jsx-scope": "off",
     "camelcase": "error",
