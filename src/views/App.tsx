@@ -15,15 +15,18 @@ export function App() {
   return (
     <div>
       <header>
-        <Typography variant='h1'>Hello world !</Typography>
-
         <Button
           color='inherit'
           onClick={toggleColorMode}
           endIcon={theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
+          className='float-right'
         >
           Put light {theme.palette.mode === 'dark' ? 'on' : 'off'}
         </Button>
+
+        <Typography variant='h1' textAlign='center'>
+          Hello world !
+        </Typography>
       </header>
     </div>
   )
