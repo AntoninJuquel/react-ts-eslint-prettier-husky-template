@@ -1,11 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import reportWebVitals from './reportWebVitals'
-import { ColorModeProvider } from './contexts'
+import { ColorModeProvider } from 'contexts'
 
-import './index.css'
+import 'index.css'
 
-import { App } from './views'
+import reportWebVitals from 'reportWebVitals'
+
+import { App } from 'views'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
