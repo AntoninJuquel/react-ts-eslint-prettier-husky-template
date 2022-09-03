@@ -4,7 +4,7 @@ export function App() {
   return (
     <div>
       <header>
-        <p>Hello world !</p>
+        <h1 className='font-bold text-red-900 underline'>Hello world !</h1>
       </header>
     </div>
   )
