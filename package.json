@@ -50,6 +50,7 @@
     ]
   },
   "dependencies": {
+    "@mui/icons-material": "^5.10.3",
     "@mui/material": "^5.10.3",
     "@mui/styled-engine": "npm:@mui/styled-engine-sc@latest",
     "@mui/styled-engine-sc": "^5.10.3",
@@ -62,7 +63,6 @@
     "@types/react-dom": "^18.0.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^4.4.0",
     "react-scripts": "^5.0.1",
     "styled-components": "^5.3.5",
     "typescript": "^4.8.2",

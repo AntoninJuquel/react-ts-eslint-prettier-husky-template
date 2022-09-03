@@ -1,13 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import './index.css'
 import reportWebVitals from './reportWebVitals'
+import { ColorModeProvider } from './contexts'
+
+import './index.css'
+
 import { App } from './views'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <React.StrictMode>
-    <App />
+    <ColorModeProvider>
+      <App />
+    </ColorModeProvider>
   </React.StrictMode>,
 )
 
