@@ -19,7 +19,7 @@ yarn add -D prettier eslint-config-prettier eslint-plugin-prettier eslint-plugin
 yarn add styled-components
 yarn add -D @types/styled-components gh-pages
 npx husky-init
-yarn add -D tailwindcss postcss autoprefixer
+yarn add -D tailwindcss postcss autoprefixer eslint-plugin-tailwindcss
 npx tailwindcss init -p
 yarn add @mui/material @mui/styled-engine-sc @mui/icons-material
 yarn add -D cypress
