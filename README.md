@@ -22,6 +22,7 @@ npx husky-init
 yarn add -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 yarn add @mui/material @mui/styled-engine-sc @mui/icons-material
+yarn add -D cypress
 ```
 
 ## Available Scripts
