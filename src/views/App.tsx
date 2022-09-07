@@ -10,6 +10,8 @@ import Send from '@mui/icons-material/Send'
 import { useColorMode } from 'contexts'
 import { useLocalStorage } from 'hooks'
 
+import { useTranslation } from 'react-i18next'
+
 export function App() {
   const theme = useTheme()
   const { toggleColorMode } = useColorMode()
@@ -17,6 +19,12 @@ export function App() {
   const [value, setValue] = useLocalStorage('me', 'Somindras')
 
   const inputRef = React.useRef<HTMLInputElement>(null)
+
+  const { t, i18n } = useTranslation()
+
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng)
+  }
 
   return (
     <div>
@@ -28,9 +36,18 @@ export function App() {
         >
           Put light {theme.palette.mode === 'dark' ? 'on' : 'off'}
         </Button>
+        <Button color='inherit' onClick={() => changeLanguage('en')}>
+          EN
+        </Button>
+        <Button color='inherit' onClick={() => changeLanguage('de')}>
+          DE
+        </Button>
+        <Button color='inherit' onClick={() => changeLanguage('fr')}>
+          FR
+        </Button>
 
         <Typography variant='h1' textAlign='center'>
-          Hello world !
+          {t('Hello world !')}
         </Typography>
       </header>
       <main>
@@ -70,7 +87,7 @@ export function App() {
           </Paper>
         </div>
         <h1 className='text-center text-gray-900 dark:text-white'>
-          Testing tailwind {theme.palette.mode}
+          {t('Testing')} tailwind {t(theme.palette.mode)}
         </h1>
       </main>
     </div>

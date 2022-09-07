@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import ReactDOM from 'react-dom/client'
 import { ColorModeProvider } from 'contexts'
 
 import 'index.css'
+import './services/i18n'
 
 import reportWebVitals from 'reportWebVitals'
 
@@ -12,7 +13,9 @@ const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <React.StrictMode>
     <ColorModeProvider>
-      <App />
+      <Suspense fallback={<div>Loading...</div>}>
+        <App />
+      </Suspense>
     </ColorModeProvider>
   </React.StrictMode>,
 )
