@@ -69,6 +69,9 @@ export function App() {
             </IconButton>
           </Paper>
         </div>
+        <h1 className='text-center text-gray-900 dark:text-white'>
+          Testing tailwind {theme.palette.mode}
+        </h1>
       </main>
     </div>
   )

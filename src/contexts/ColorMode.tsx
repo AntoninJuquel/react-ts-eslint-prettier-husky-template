@@ -28,15 +28,17 @@ export function ColorModeProvider({ children }: ColorModeProps): JSX.Element {
     [],
   )
 
-  const theme = React.useMemo(
-    () =>
-      createTheme({
-        palette: {
-          mode,
-        },
-      }),
-    [mode],
-  )
+  const theme = React.useMemo(() => {
+    const dark = 'dark'
+    const bodyClassList = window.document.body.classList
+    mode === dark ? bodyClassList.add(dark) : bodyClassList.remove(dark)
+
+    return createTheme({
+      palette: {
+        mode,
+      },
+    })
+  }, [mode])
 
   return (
     <ColorModeContext.Provider value={value}>
