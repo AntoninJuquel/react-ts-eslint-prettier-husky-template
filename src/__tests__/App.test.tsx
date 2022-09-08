@@ -1,4 +1,5 @@
 import { render, screen, act } from '@testing-library/react';
+import user from '@testing-library/user-event';
 
 import { App } from '~/views';
 
@@ -15,10 +16,8 @@ test('Renders main page correctly', async () => {
   expect(codeCount).not.toBeInTheDocument();
 
   // Init
-  act(() => {
-    buttonCount.click();
-    buttonCount.click();
-  });
+  await user.click(buttonCount);
+  await user.click(buttonCount);
 
   // Post Expectations
   expect(buttonCount.innerHTML).toBe('count is: 2');
