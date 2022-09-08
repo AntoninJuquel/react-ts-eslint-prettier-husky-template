@@ -1,25 +1,25 @@
 {
   "compilerOptions": {
-    "target": "es6",
-    "lib": ["es6", "dom", "dom.iterable", "esnext"],
-    "allowJs": true,
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "allowJs": false,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
+    "module": "ESNext",
+    "moduleResolution": "Node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "types": ["cypress"],
+    "composite": true,
+    "baseUrl": ".",
     "paths": {
-      "@mui/styled-engine": ["./node_modules/@mui/styled-engine-sc"]
-    },
-    "baseUrl": "./src"
+      "~/*": ["src/*"]
+    }
   },
   "include": ["src"]
 }

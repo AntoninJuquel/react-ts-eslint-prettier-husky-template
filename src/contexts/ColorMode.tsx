@@ -1,51 +1,35 @@
-import React, { createContext, useContext, useMemo } from 'react'
-import { ThemeProvider, createTheme, useMediaQuery, CssBaseline } from '@mui/material'
+import React from 'react';
+import { useLocalStorage } from '~/hooks/useLocalStorage';
 
 interface ColorModeProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
-interface IColorMode {
-  toggleColorMode?: () => void
-}
+export type IColorMode = {
+  colorMode?: 'light' | 'dark';
+  toggleColorMode?: () => void;
+};
 
-const ColorModeContext = createContext<IColorMode>({})
-
-export function useColorMode(): IColorMode {
-  return useContext(ColorModeContext) as IColorMode
-}
+export const ColorModeContext = React.createContext<IColorMode>({});
 
 export function ColorModeProvider({ children }: ColorModeProps): JSX.Element {
-  const [mode, setMode] = React.useState<'light' | 'dark'>(
-    useMediaQuery('(prefers-color-scheme: dark)') ? 'dark' : 'light',
-  )
-  const value: IColorMode = useMemo(
-    () => ({
+  const [localColorMode, setLocalColorMode] = useLocalStorage(
+    'prefers-color-scheme',
+    window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light',
+  );
+
+  const value: IColorMode = React.useMemo(() => {
+    const dark = 'dark';
+    const bodyClassList = window.document.body.classList;
+    localColorMode === dark ? bodyClassList.add(dark) : bodyClassList.remove(dark);
+
+    return {
+      colorMode: localColorMode as 'light' | 'dark',
       toggleColorMode: () => {
-        setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'))
+        setLocalColorMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
       },
-    }),
-    [],
-  )
+    };
+  }, [localColorMode, setLocalColorMode]);
 
-  const theme = React.useMemo(() => {
-    const dark = 'dark'
-    const bodyClassList = window.document.body.classList
-    mode === dark ? bodyClassList.add(dark) : bodyClassList.remove(dark)
-
-    return createTheme({
-      palette: {
-        mode,
-      },
-    })
-  }, [mode])
-
-  return (
-    <ColorModeContext.Provider value={value}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        {children}
-      </ThemeProvider>
-    </ColorModeContext.Provider>
-  )
+  return <ColorModeContext.Provider value={value}>{children}</ColorModeContext.Provider>;
 }
