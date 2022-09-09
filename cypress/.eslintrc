@@ -2,6 +2,7 @@
   "env": {
     "cypress/globals": true
   },
+  "extends": ["plugin:cypress/recommended", "plugin:chai-friendly/recommended"],
   "plugins": ["cypress"],
   "rules": {
     "cypress/no-assigning-return-values": "error",
@@ -11,6 +12,5 @@
     "cypress/no-async-tests": "error",
     "cypress/no-pause": "error",
     "@typescript-eslint/no-var-requires": "off"
-  },
-  "extends": ["plugin:cypress/recommended", "plugin:chai-friendly/recommended"]
+  }
 }

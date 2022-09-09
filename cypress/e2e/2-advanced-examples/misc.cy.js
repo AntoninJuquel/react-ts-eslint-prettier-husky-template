@@ -90,11 +90,11 @@ context('Misc', () => {
         disableTimersAndAnimations: true,
         screenshotOnRunFailure: true,
         onBeforeScreenshot() {
-          console.log("I'm about to take a screenshot");
+          console.log('before screenshot');
         },
         onAfterScreenshot() {
-          console.log('I just took a screenshot');
-        },
+          console.log('after screenshot');
+        }
       });
     });
   });

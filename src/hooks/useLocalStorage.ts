@@ -2,7 +2,7 @@ import { useCallback, useDebugValue, useEffect, useState } from 'react';
 
 export function useLocalStorage(
   key: string,
-  initialValue: string,
+  initialValue: string
 ): [string, (value: string | ((storedValue: string) => string)) => void] {
   const [storedValue, setStoredValue] = useState<string>(() => {
     try {
@@ -26,7 +26,7 @@ export function useLocalStorage(
         console.log(error);
       }
     },
-    [key, storedValue],
+    [key, storedValue]
   );
 
   useEffect(() => {

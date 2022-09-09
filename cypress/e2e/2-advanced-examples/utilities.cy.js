@@ -29,7 +29,7 @@ context('Utilities', () => {
       return Cypress.Blob.imgSrcToDataURL(
         'https://example.cypress.io/assets/img/javascript-logo.png',
         undefined,
-        'anonymous',
+        'anonymous'
       ).then((dataUrl) => {
         // create an <img> element and set its src to the dataUrl
         let img = Cypress.$('<img />', { src: dataUrl });
@@ -47,20 +47,20 @@ context('Utilities', () => {
   it('Cypress.minimatch - test out glob patterns against strings', () => {
     // https://on.cypress.io/minimatch
     let matching = Cypress.minimatch('/users/1/comments', '/users/*/comments', {
-      matchBase: true,
+      matchBase: true
     });
 
     expect(matching, 'matching wildcard').to.be.true;
 
     matching = Cypress.minimatch('/users/1/comments/2', '/users/*/comments', {
-      matchBase: true,
+      matchBase: true
     });
 
     expect(matching, 'comments').to.be.false;
 
     // ** matches against all downstream path segments
     matching = Cypress.minimatch('/foo/bar/baz/123/quux?a=b&c=2', '/foo/**', {
-      matchBase: true,
+      matchBase: true
     });
 
     expect(matching, 'comments').to.be.true;
@@ -68,7 +68,7 @@ context('Utilities', () => {
     // whereas * matches only the next path segment
 
     matching = Cypress.minimatch('/foo/bar/baz/123/quux?a=b&c=2', '/foo/*', {
-      matchBase: false,
+      matchBase: false
     });
 
     expect(matching, 'comments').to.be.false;
@@ -83,7 +83,7 @@ context('Utilities', () => {
      */
     function waitOneSecond() {
       // return a promise that resolves after 1 second
-      return new Cypress.Promise((resolve) => {
+      return new Cypress.Promise((resolve, reject) => {
         setTimeout(() => {
           // set waited to true
           waited = true;

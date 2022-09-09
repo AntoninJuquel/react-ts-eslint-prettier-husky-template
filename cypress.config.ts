@@ -4,13 +4,13 @@ export default defineConfig({
   component: {
     devServer: {
       framework: 'react',
-      bundler: 'vite',
-    },
+      bundler: 'vite'
+    }
   },
 
   e2e: {
-    setupNodeEvents(on, config) {
+    setupNodeEvents() {
       // implement node event listeners here
-    },
-  },
+    }
+  }
 });

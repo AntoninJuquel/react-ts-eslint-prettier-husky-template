@@ -12,14 +12,11 @@ i18n
     debug: true,
     detection: {
       order: ['queryString', 'cookie'],
-      caches: ['cookie'],
+      caches: ['cookie']
     },
     interpolation: {
-      escapeValue: false, // not needed for react as it escapes by default
-    },
-    backend: {
-      loadPath: '/react-ts-eslint-prettier-husky-template/locales/{{lng}}/{{ns}}.json',
-    },
+      escapeValue: false // not needed for react as it escapes by default
+    }
   });
 
 export default i18n;

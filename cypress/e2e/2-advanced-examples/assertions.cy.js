@@ -40,10 +40,7 @@ context('Assertions', () => {
 
     it('.and() - chain multiple assertions together', () => {
       // https://on.cypress.io/and
-      cy.get('.assertions-link')
-        .should('have.class', 'active')
-        .and('have.attr', 'href')
-        .and('include', 'cypress.io');
+      cy.get('.assertions-link').should('have.class', 'active').and('have.attr', 'href').and('include', 'cypress.io');
     });
   });
 
@@ -84,7 +81,7 @@ context('Assertions', () => {
           expect(paragraphs, 'has expected text in each paragraph').to.deep.eq([
             'Some text from first p',
             'More text from second p',
-            'And even more text from third p',
+            'And even more text from third p'
           ]);
         });
     });
@@ -158,7 +155,7 @@ context('Assertions', () => {
     it('assert - assert shape of an object', () => {
       const person = {
         name: 'Joe',
-        age: 20,
+        age: 20
       };
 
       assert.isObject(person, 'value is object');
