@@ -4,23 +4,22 @@ on:
   push:
     # Run on all branches
     branches:
-      - "*"
+      - '*'
     # Run only if files modified are not docs
     paths-ignore:
-      - "*.md"
+      - '*.md'
   pull_request:
     # Run on all branches
     branches:
-      - "*"
+      - '*'
     # Run only if files modified are not docs
     paths-ignore:
-      - "*.md"
+      - '*.md'
 
 env:
   GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
 
 jobs:
-
   # Build & Test
   buildAndTest:
     name: Build & Test
@@ -32,7 +31,7 @@ jobs:
 
       - uses: actions/setup-node@v2
         with:
-          node-version: "16"
+          node-version: '16'
 
       # yarn cache
       - uses: actions/cache@v2
@@ -102,8 +101,8 @@ jobs:
     # Manual deployment
     # See https://devblogs.microsoft.com/devops/i-need-manual-approvers-for-github-actions-and-i-got-them-now/
     environment:
-      name: pchmn.github.io/vite-react-ts-ghactions-template
-      url: https://pchmn.github.io/vite-react-ts-ghactions-template/
+      name: AntoninJuquel.github.io/react-ts-eslint-prettier-husky-template
+      url: https://AntoninJuquel.github.io/react-ts-eslint-prettier-husky-template/
     steps:
       - uses: actions/checkout@v2
         with:
@@ -111,7 +110,7 @@ jobs:
 
       - uses: actions/setup-node@v2
         with:
-          node-version: "16"
+          node-version: '16'
 
       # Download dist artifacts
       - uses: actions/download-artifact@v2
