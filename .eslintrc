@@ -20,13 +20,13 @@
       "version": "detect"
     }
   },
-  "overrides": [
-    {
-      "files": ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
-      "extends": ["plugin:testing-library/react"]
-    }
-  ],
   "rules": {
-    "prettier/prettier": ["error"]
+    "prettier/prettier": ["error"],
+    "tailwindcss/no-custom-classname": [
+      "warn",
+      {
+        "config": "./tailwind.config.cjs"
+      }
+    ]
   }
 }

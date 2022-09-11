@@ -1,4 +1,4 @@
-import { Button, Link, Text } from '@/components/styled';
+import { Link, Text } from '@/components/styled';
 import logo from '@/assets/logo.svg';
 import { useState } from 'react';
 import { useColorModeContext } from '@/contexts';
@@ -16,18 +16,18 @@ export function App() {
       <header className="flex min-h-screen flex-col content-center items-center bg-white text-sm text-white dark:bg-slate-800">
         <img src={logo} className="h-96" alt="logo" />
         <Text>{t('Hello world !')}</Text>
-        <Button type="button" onClick={() => setCount((count) => count + 1)}>
+        <button className="btn" type="button" onClick={() => setCount((count) => count + 1)}>
           count is: {count}
-        </Button>
-        <Button type="button" onClick={toggleColorMode}>
+        </button>
+        <button className="btn" type="button" onClick={toggleColorMode}>
           Toggle color mode : {colorMode}
-        </Button>
-        <Button type="button" onClick={() => i18n.changeLanguage('en')}>
+        </button>
+        <button className="btn" type="button" onClick={() => i18n.changeLanguage('en')}>
           EN
-        </Button>
-        <Button type="button" onClick={() => i18n.changeLanguage('fr')}>
+        </button>
+        <button className="btn" type="button" onClick={() => i18n.changeLanguage('fr')}>
           FR
-        </Button>
+        </button>
         <Text>
           Edit <code>App.tsx</code> and save to test HMR updates.
         </Text>
