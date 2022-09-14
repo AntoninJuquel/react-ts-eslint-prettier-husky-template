@@ -22,11 +22,6 @@
   },
   "rules": {
     "prettier/prettier": ["error"],
-    "tailwindcss/no-custom-classname": [
-      "warn",
-      {
-        "config": "./tailwind.config.cjs"
-      }
-    ]
+    "@typescript-eslint/no-var-requires": "off"
   }
 }

@@ -1,16 +1,8 @@
 import { App } from '@/views';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
-test('count is 0 at first', () => {
+test('Hello world on screen', () => {
   render(<App />);
 
-  expect(screen.getByText('count is: 0')).toBeDefined();
-});
-
-test('increments count', () => {
-  render(<App />);
-
-  fireEvent.click(screen.getByRole('button', { name: 'count is: 0' }));
-
-  expect(screen.getByText('count is: 1')).toBeDefined();
+  expect(screen.getByText('Hello world')).toBeDefined();
 });

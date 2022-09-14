@@ -1,1 +1,1 @@
-export { useColorModeContext, ColorModeProvider } from './ColorModeContext';
+export { useColorModeContext, ColorModeProvider } from './ThemeContext';

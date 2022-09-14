@@ -6,6 +6,5 @@
   "endOfLine": "lf",
   "printWidth": 120,
   "trailingComma": "none",
-  "plugins": ["prettier-plugin-tailwindcss"],
-  "tailwindConfig": "./tailwind.config.cjs"
+  "plugins": ["prettier-plugin-tailwindcss"]
 }

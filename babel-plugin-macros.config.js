@@ -1,6 +1,5 @@
 module.exports = {
   twin: {
-    preset: 'styled-components',
-    config: 'tailwind.config.cjs'
+    preset: 'styled-components'
   }
 };
