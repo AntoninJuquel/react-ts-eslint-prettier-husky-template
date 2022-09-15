@@ -64,28 +64,6 @@ jobs:
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
 
-  # coverage:
-  #   name: Coverage analysis
-  #   needs: buildAndTest
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@master
-  #       with:
-  #         fetch-depth: 0
-  #         token: ${{ env.GITHUB_TOKEN }}
-
-  #     # Donwload coverage artifacts
-  #     - uses: actions/download-artifact@v2
-  #       with:
-  #         name: coverage
-
-  #     # Update coverage file to codecov
-  #     - name: CODECOV
-  #       uses: codecov/codecov-action@v3
-  #       with:
-  #         token: ${{ secrets.CODECOV_TOKEN }}
-  #         files: lcov.info
-
   # Deploy to gh pages
   deploy:
     name: Deploy
