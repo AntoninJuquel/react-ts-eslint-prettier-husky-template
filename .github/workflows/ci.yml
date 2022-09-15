@@ -25,7 +25,7 @@ jobs:
     name: Build & Test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@master
         with:
           token: ${{ env.GITHUB_TOKEN }}
 
@@ -62,7 +62,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: coverage
-          path: coverage/cov.xml
+          path: coverage/lcov.info
 
   coverage:
     name: Coverage analysis
@@ -84,7 +84,7 @@ jobs:
         uses: codecov/codecov-action@v3
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          files: cov.xml
+          files: lcov.info
 
   # Deploy to gh pages
   deploy:
