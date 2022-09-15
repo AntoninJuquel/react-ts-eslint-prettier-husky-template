@@ -19,9 +19,11 @@ This a React v18 + TypeScript + Vitest and React Testing Library + Github Action
 
 - ⚡️&nbsp; [Vite](https://vitejs.dev/)
 - ⚛️&nbsp; [React v18](https://beta.reactjs.org/) with [TypeScript](https://www.typescriptlang.org/)
-- 🧪&nbsp; [Vitest](https://vitest.dev/) + [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
+- 🧪&nbsp; [Vitest](https://vitest.dev/) + [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) + [Cypress](https://www.cypress.io)
 - 🚀&nbsp; [Github Actions](https://docs.github.com/en/actions) with deployment on [Github Pages](https://pages.github.com/)
-
+- 🎨&nbsp; [Tailwindcss](https://tailwindcss.com) with all plugins + [daisyUI](https://daisyui.com) with theme switcher hook
+- 🌐&nbsp; [i18next](https://react.i18next.com) setup and ready to use
+- 📕&nbsp; [Storybook](https://storybook.js.org)
 ### Coding Style
 
 - VSCode settings & extensions recommendations
@@ -52,18 +54,18 @@ npx degit AntoninJuquel/react-ts-eslint-prettier-husky-template app_name
 
 ### Usage
 
-> Project was built using [`pnpm`](https://pnpm.io/installation#using-npm). If you want to use `npm` or `yarn`, just don't forget to update Github Actions workflow (`.github/workflows/ci.yml`).
+> Project was built using [`yarn`](https://yarnpkg.com). If you want to use `npm` or `pnpm`, just don't forget to update Github Actions workflow (`.github/workflows/ci.yml`).
 
 #### Install
 
 ```sh
-pnpm i
+yarn
 ```
 
 #### Dev
 
 ```sh
-pnpm dev
+yarn dev
 ```
 
 #### Build
@@ -71,25 +73,28 @@ pnpm dev
 
 ```sh
 # normal build
-pnpm build
+yarn build
 
 # build with 404.html file added for Github Pages included
-pnpm build:ci
+yarn build:ci
 ```
 > See explanation of `404.html` file [here](#github-pages)
 #### Test
 
 ```sh
 # without coverage
-pnpm test
+yarn test
 
 # with coverage
-pnpm test:ci
+yarn test:ci
+
+# with cypress
+yarn cy
 ```
 #### Serve
 
 ```sh
-pnpm serve
+yarn serve
 ```
 
 <br>
