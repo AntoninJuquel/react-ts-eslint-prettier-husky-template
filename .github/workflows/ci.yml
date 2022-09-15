@@ -81,8 +81,7 @@ jobs:
 
       # Update coverage file to codecov
       - name: CODECOV
-        uses: actions/checkout@master
-        uses: codecov/codecov-action@v1
+        uses: codecov/codecov-action@v3
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           files: cov.xml
