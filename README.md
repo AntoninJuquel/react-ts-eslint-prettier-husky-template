@@ -105,7 +105,7 @@ If you want to use Github Actions in your repo, you'll need to make little confi
 
 Actual [workflow](https://github.com/AntoninJuquel/react-ts-eslint-prettier-husky-template/blob/main/.github/workflows/ci.yml) is:
 
-![image](https://user-images.githubusercontent.com/57025128/190350129-e2e959a4-d388-497a-97d0-93c2922ebab3.png)
+![image](https://user-images.githubusercontent.com/57025128/190361775-3c6f8386-48b7-4d6c-8ac2-70dcb4587a7b.png)
 
 ### Build & Test job
 
