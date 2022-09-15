@@ -62,14 +62,14 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: coverage
-          path: coverage/lcov.info
+          path: coverage/cov.xml
 
   coverage:
     name: Coverage analysis
     needs: buildAndTest
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@master
         with:
           fetch-depth: 0
           token: ${{ env.GITHUB_TOKEN }}
@@ -81,10 +81,11 @@ jobs:
 
       # Update coverage file to codecov
       - name: CODECOV
+        uses: actions/checkout@master
         uses: codecov/codecov-action@v1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          files: lcov.info
+          files: cov.xml
 
   # Deploy to gh pages
   deploy:
@@ -99,7 +100,7 @@ jobs:
       name: AntoninJuquel.github.io/react-ts-eslint-prettier-husky-template
       url: https://AntoninJuquel.github.io/react-ts-eslint-prettier-husky-template/
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@master
         with:
           token: ${{ env.GITHUB_TOKEN }}
 
