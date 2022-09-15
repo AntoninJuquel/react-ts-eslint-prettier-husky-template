@@ -34,20 +34,15 @@ jobs:
           node-version: '16'
 
       # yarn cache
-      - uses: actions/cache@v3
-        id: yarn-cache
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+          node-version: '16'
+          cache: 'yarn'
 
       # Install
-      - name: INSTALL
-        uses: borales/actions-yarn@v3.0.0
-        with:
-          version: 6.22.2
-          run_install: true
+      - name: Install project dependencies
+        run: yarn --prefer-offline
 
       # Build
       - name: BUILD
