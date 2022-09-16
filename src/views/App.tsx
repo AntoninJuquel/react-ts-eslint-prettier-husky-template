@@ -29,9 +29,9 @@ export function App() {
         />
         <label className="label-text">☀️</label>
       </div>
-      <div className="dropdown-right dropdown">
+      <div className="dropdown">
         <label tabIndex={0} className="btn m-1">
-          Select theme
+          {theme}
         </label>
         <ul
           tabIndex={0}
@@ -47,16 +47,16 @@ export function App() {
 
       <div className="dropdown">
         <label tabIndex={0} className="btn m-1">
-          {t('language')}
+          <img src={`https://flagcdn.com/w20/${i18n.language}.png`} width="20" alt={i18n.language} />
         </label>
         <ul
           tabIndex={0}
           className="dropdown-content menu rounded-box max-h-96 w-16 overflow-auto bg-base-100 p-2 shadow"
         >
           {locales.map((item: string) => (
-            <li key={item} className={theme === item ? 'bg-primary-focus' : ''}>
+            <li key={item} className={i18n.language === item ? 'bg-primary-focus' : ''}>
               <a onClick={() => i18n.changeLanguage(item)}>
-                <img src={`https://flagcdn.com/w20/${item}.png`} width="20" alt="South Africa" />
+                <img src={`https://flagcdn.com/w20/${item}.png`} width="20" alt={item} />
               </a>
             </li>
           ))}
