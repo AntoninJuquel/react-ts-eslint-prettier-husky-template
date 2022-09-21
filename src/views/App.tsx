@@ -35,11 +35,13 @@ export function App() {
         </label>
         <ul
           tabIndex={0}
-          className="dropdown-content menu rounded-box max-h-96 w-52 overflow-auto bg-base-100 p-2 shadow"
+          className="dropdown-content menu rounded-box max-h-96 flex-nowrap overflow-auto bg-base-100 p-2 shadow"
         >
           {themes.map((item: string) => (
-            <li key={item} className={theme === item ? 'bg-primary-focus' : ''}>
-              <a onClick={() => setTheme(item)}>{item}</a>
+            <li key={item}>
+              <a onClick={() => setTheme(item)} className={theme === item ? 'active' : ''}>
+                {item}
+              </a>
             </li>
           ))}
         </ul>
@@ -51,7 +53,7 @@ export function App() {
         </label>
         <ul
           tabIndex={0}
-          className="dropdown-content menu rounded-box max-h-96 w-16 overflow-auto bg-base-100 p-2 shadow"
+          className="dropdown-content menu rounded-box max-h-96 flex-nowrap overflow-auto bg-base-100 p-2 shadow"
         >
           {locales.map((item: string) => (
             <li key={item} className={i18n.language === item ? 'bg-primary-focus' : ''}>
