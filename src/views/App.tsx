@@ -33,7 +33,10 @@ export function App() {
         <label tabIndex={0} className="btn m-1">
           {theme}
         </label>
-        <ul tabIndex={0} className="dropdown-content menu rounded-box max-h-96 overflow-auto bg-base-100 p-2 shadow">
+        <ul
+          tabIndex={0}
+          className="dropdown-content menu rounded-box max-h-96 flex-nowrap overflow-auto bg-base-100 p-2 shadow"
+        >
           {themes.map((item: string) => (
             <li key={item}>
               <a className={theme === item ? 'active' : ''} onClick={() => setTheme(item)}>
@@ -48,7 +51,10 @@ export function App() {
         <label tabIndex={0} className="btn m-1">
           <img src={`https://flagcdn.com/w20/${i18n.language}.png`} width="20" alt={i18n.language} />
         </label>
-        <ul tabIndex={0} className="dropdown-content menu rounded-box max-h-96 overflow-auto bg-base-100 p-2 shadow">
+        <ul
+          tabIndex={0}
+          className="dropdown-content menu rounded-box max-h-96 flex-nowrap overflow-auto bg-base-100 p-2 shadow"
+        >
           {locales.map((item: string) => (
             <li key={item}>
               <a className={i18n.language === item ? 'active' : ''} onClick={() => i18n.changeLanguage(item)}>
