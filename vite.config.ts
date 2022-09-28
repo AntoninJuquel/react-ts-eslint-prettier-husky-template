@@ -24,6 +24,9 @@ export default defineConfig({
   build: {
     sourcemap: true
   },
+  server: {
+    port: process.env.PORT === undefined ? 3000 : +process.env.PORT
+  },
   test: {
     globals: true,
     environment: 'happy-dom',
